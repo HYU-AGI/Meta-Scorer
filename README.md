@@ -1,5 +1,5 @@
-# 정량적 방식과 정성적 방식을 모두 고려하는 범용적 활용 가능한 Meta Scorer
-
+# AGI 발현을 위한 메타인지 프레임워크 핵심기술 개발 및 실증
+## 정량적 방식과 정성적 방식을 모두 고려하는 범용적 활용 가능한 Meta Scorer
 
 ## ⚙️ Requirements
 To install requirements:
