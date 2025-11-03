@@ -29,3 +29,29 @@ python src/generation.py --model_name "generation_model_name" --dataset_name "Cr
 ```
 python src/meta_scorer.py --model_name "generation_model_name" --dataset_name "CreativeMath"
 ```
+
+### References
+[LLM-Check: Investigating Detection of Hallucinations in Large Language Models](https://proceedings.neurips.cc/paper_files/paper/2024/file/3c1e1fdf305195cd620c118aaa9717ad-Paper-Conference.pdf)
+```
+@inproceedings{NEURIPS2024_3c1e1fdf,
+ author = {Sriramanan, Gaurang and Bharti, Siddhant and Sadasivan, Vinu Sankar and Saha, Shoumik and Kattakinda, Priyatham and Feizi, Soheil},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+ pages = {34188--34216},
+ publisher = {Curran Associates, Inc.},
+ title = {LLM-Check: Investigating Detection of Hallucinations in Large Language Models},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/3c1e1fdf305195cd620c118aaa9717ad-Paper-Conference.pdf},
+ volume = {37},
+ year = {2024}
+}
+```
+
+[Assessing the Creativity of LLMs in Proposing Novel Solutions to Mathematical Problems](https://arxiv.org/pdf/2410.18336)
+```
+@article{ye2024assessing,
+  title={Assessing the Creativity of LLMs in Proposing Novel Solutions to Mathematical Problems},
+  author={Ye, Junyi and Gu, Jingyi and Zhao, Xinyun and Yin, Wenpeng and Wang, Guiling},
+  journal={arXiv preprint arXiv:2410.18336},
+  year={2024}
+}
+```
