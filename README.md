@@ -1,5 +1,6 @@
 # AGI 발현을 위한 메타인지 프레임워크 핵심기술 개발 및 실증
-## 정량적 방식과 정성적 방식을 모두 고려하는 범용적 활용 가능한 Meta Scorer
+## AGI 발현을 위한 Verifier에 대한 연구 개발
+### 정량적 방식과 정성적 방식을 모두 고려하는 범용적 활용 가능한 Meta Scorer
 ### 💡 예시
 ![image](./img/example.png)
 
@@ -18,7 +19,7 @@ API_KEYS.json 예시
 }
 ```
 
-## 💻 Running Meta-Scorer
+## 💻 실행 방법
 ### Step 1. LLM을 활용한 답변 생성
 ```
 python src/generation.py --model_name "generation_model_name" --dataset_name "CreativeMath" --do_sample True --temperature 0.7 --top_p 1.0 --top_k 0.7 --max_new_tokens 1024
