@@ -11,7 +11,7 @@ from prompts import (load_novel_solution_generation_prompt,
                      load_coarse_grained_novelty_evaluation_prompt)
 from utils import load_json, save_json, floatify, extract_yes_no
 from models import ModelWrapper
-from meta_scorer.src.metrics_utils import compute_meta_scores_for_text
+from metrics_utils import compute_meta_scores_for_text
 
 
 model_version = {
@@ -31,6 +31,7 @@ evaluators = ["gemini-1.5-pro", "o4-mini"]
 def main():
     parser = argparse.ArgumentParser(description="Compute meta-scores for already generated responses.")
     parser.add_argument("--seed", type=int, default=42, help="random seed setting")
+    parser.add_argument("--save_interval", type=int, default=20)
     parser.add_argument("--model_name", type=str, default="Mathstral-7B", help="Model name for generation.")
     parser.add_argument("--dataset_name", type=str, default="CreativeMath", help="dataset name")
     parser.add_argument("--generation_res_dir", type=str, default="output", help="Generation results directory")
@@ -127,6 +128,7 @@ def main():
                 entry["label"] = "Hallucinated_Solution"
                 saved_data[idx] = entry
             else:
+                k = 1
                 prompt = load_coarse_grained_novelty_evaluation_prompt(problem, solutions, k, new_solution)
                 response = model.generate_response(prompt)
                 decision = extract_yes_no(response)  # Return either "YES" or "NO"
