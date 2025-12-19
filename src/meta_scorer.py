@@ -83,7 +83,7 @@ def main():
         response = entry["response"]
         
         # logit, hidden states, attention 값을 구하기 위한 입력 프롬프트 생성
-        prompt = load_novel_solution_generation_prompt(problem, solutions, 1)
+        prompt = load_novel_solution_generation_prompt(problem, solutions, entry['k'])
         combined_text = prompt + "\n" + response
         # 정량적 평가
         # meta score 계산 (perplexity, window entroy, logit entropy, hidden score, attention score)
@@ -128,7 +128,7 @@ def main():
                 entry["label"] = "Hallucinated_Solution"
                 saved_data[idx] = entry
             else:
-                k = 1
+                k = entry['k']
                 prompt = load_coarse_grained_novelty_evaluation_prompt(problem, solutions, k, new_solution)
                 response = model.generate_response(prompt)
                 decision = extract_yes_no(response)  # Return either "YES" or "NO"
@@ -156,4 +156,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
